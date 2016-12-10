@@ -22,38 +22,24 @@
  
 **Destructuring**
 
-    // list matching
-    var [a, ,b] = [1,2,3];
-    a === 1;
-    b === 3;
-    
-    // object matching
-    var { op: a, lhs: { op: b }, rhs: c }
-           = getASTNode()
-    
-    // object matching shorthand
-    // binds `op`, `lhs` and `rhs` in scope
-    var {op, lhs, rhs} = getASTNode()
-    
-    // Can be used in parameter position
-    function g({name: x}) {
-      console.log(x);
-    }
-    g({name: 5})
-    
-    // Fail-soft destructuring
-    var [a] = [];
-    a === undefined;
-    
-    // Fail-soft destructuring with defaults
-    var [a = 1] = [];
-    a === 1;
-    
-    // Destructuring + defaults arguments
-    function r({x, y, w = 10, h = 10}) {
-      return x + y + w + h;
-    }
-    r({x:1, y:2}) === 23
+ - Can assign object into object or Array into Array. 
+ - Can set default values
+ - Can use it in functions
+ - Difference in the use of : and = in the left hand assignment side. = take assign the values to keys but : assign the values to property value(object name on right side)
 
- - List item
+    var {x, y, w = 10, h = 10} = { x : 10, y : 20, w: 44};
+    console.log(x, y, w , h);
+    var {name: x} = { name : 10 };
+    console.log(name, x);
+
+**Default + Rest + Spread**
+
+ - Default - like in function param assign the param with a value to make that defaul value if not passed or undefined in function call.
+ - Rest - in function rest can be access via ... sign. Like `function(x, ...y)`. So everything apart from the first param will go inside ...y object in an array. And can be access inside function with y object name itself.
+ - Vice versa while passing param to function call the same notation can be used. We can pass param in Array via `functionCall(..[1,2,3])`
+
+**Let + Const**
+
+ - Let is block level scope variables
+ - Const can't be changed later and will throw if changed.
 
