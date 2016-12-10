@@ -54,4 +54,50 @@
  - Support Unicode characters into the JavaScript code. 
   
 **Modules**
- - List item
+ - Keywords - `export` and `import`
+ - Can export multiple object or functions from one module.
+ - Can import multiple or single or all object or function defined in a module
+ -  Can `export default` or `export *`
+ - Imports are hoisted. Can imported can be used above the import declarations as well.
+ - Can import all modules with there names or * keyword and assign it into a object.
+
+     // app.js
+    import * as math from "lib/math";
+    console.log("2π = " + math.sum(math.pi, math.pi));
+    COPY
+    // otherApp.js
+    import {sum, pi} from "lib/math";
+    console.log("2π = " + sum(pi, pi));
+
+**Map + Set + WeakMap + WeakSet**
+
+ 
+**Proxies**
+
+ - Can be used for interception, object virtualization, logging/profiling, etc.
+ - It enables to change the behaviours of the target objects or functions during the get, set, apply etc life-cycle method calls.
+
+    // Proxying a normal object
+    var target = {};
+    var handler = {
+      get: function (receiver, name) {
+        return `Hello, ${name}!`;
+      }
+    };
+    
+    var p = new Proxy(target, handler);
+    p.world === "Hello, world!";
+
+**Symbols**
+
+ - Symbols are mainly used as unique property keys – a symbol never clashes with any other property key (symbol or string)
+ 
+**Subclassable Built-ins**
+
+ - Built in primitives can be override by using the class extends. Primitives like Array, Object, Date etc.
+
+**Math + Number + String + Object APIs**
+
+ - Many new library additions, including core Math libraries, Array conversion helpers, and Object.assign for copying.
+
+**Reflect API**
