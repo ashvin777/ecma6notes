@@ -42,4 +42,16 @@
 
  - Let is block level scope variables
  - Const can't be changed later and will throw if changed.
+  
+**Iterators + For..Of**
 
+**Generators**
+ 
+ - Use `function*` and `yield` combinations. yield return or throws Generator class reference to the callee. Generator has all those iterations methods defined inside it prototype.  It is used for iteration only. Along with `Symbol.iteration`
+
+**Unicode**
+
+ - Support Unicode characters into the JavaScript code. 
+  
+**Modules**
+ - List item
