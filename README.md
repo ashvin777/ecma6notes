@@ -9,6 +9,7 @@
  - Supports inheritance, super calls, instance, static methods(Prototype) and constructors
  - Supports extends and ?implements?
  - If `class B extends A` then in constructor of class B have to call the class A constructor first to access the same `this` using `super(params);` syntax.
+ - can't use `this` reference in the static method
  
 **Enhanced Object Literals**
  
